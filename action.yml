@@ -1,0 +1,54 @@
+name: 'Create Copia Pull Request'
+description: 'Create a pull request on a Copia instance via the REST API'
+author: 'Copia Automation'
+
+inputs:
+  server_url:
+    description: 'Base URL of the Copia instance (e.g. https://app.copia.io)'
+    required: true
+  token:
+    description: 'Personal access token for authentication'
+    required: true
+  owner:
+    description: 'Repository owner (user or organization)'
+    required: true
+  repo:
+    description: 'Repository name'
+    required: true
+  head:
+    description: 'Source branch (or user:branch for cross-repo PRs)'
+    required: true
+  base:
+    description: 'Target branch'
+    required: true
+  title:
+    description: 'Pull request title'
+    required: true
+  body:
+    description: 'Pull request description'
+    required: false
+    default: ''
+  assignees:
+    description: 'Comma-separated list of usernames to assign'
+    required: false
+    default: ''
+  labels:
+    description: 'Comma-separated list of label IDs'
+    required: false
+    default: ''
+  milestone:
+    description: 'Milestone ID'
+    required: false
+    default: ''
+
+outputs:
+  pull_request_number:
+    description: 'The index number of the created pull request'
+  pull_request_url:
+    description: 'The HTML URL of the created pull request'
+  json:
+    description: 'The full JSON API response'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
