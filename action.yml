@@ -3,9 +3,6 @@ description: 'Create a pull request on a Copia instance via the REST API'
 author: 'Copia Automation'
 
 inputs:
-  server_url:
-    description: 'Base URL of the Copia instance (e.g. https://app.copia.io)'
-    required: true
   token:
     description: 'Personal access token for authentication'
     required: true
@@ -38,6 +35,10 @@ inputs:
     default: ''
   milestone:
     description: 'Milestone ID'
+    required: false
+    default: ''
+  server_url:
+    description: 'Base URL of the Copia instance (e.g. https://app.copia.io). Defaults to GITHUB_SERVER_URL.'
     required: false
     default: ''
 
