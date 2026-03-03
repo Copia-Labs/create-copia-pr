@@ -50,5 +50,5 @@ outputs:
     description: 'The full JSON API response'
 
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
