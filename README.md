@@ -11,7 +11,6 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 ```yaml
 - uses: Copia-Labs/create-copia-pr@v1
   with:
-    server_url: https://app.copia.io
     token: ${{ secrets.COPIA_TOKEN }}
     owner: my-org
     repo: my-project
@@ -26,7 +25,7 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 - uses: Copia-Labs/create-copia-pr@v1
   id: create-pr
   with:
-    server_url: https://app.copia.io
+    server_url: https://app.copia.io # optional override
     token: ${{ secrets.COPIA_TOKEN }}
     owner: my-org
     repo: my-project
@@ -48,19 +47,19 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 
 ## Inputs
 
-| Name         | Required | Default | Description                                                  |
-| ------------ | -------- | ------- | ------------------------------------------------------------ |
-| `server_url` | yes      | —       | Base URL of the Copia instance (e.g. `https://app.copia.io`) |
-| `token`      | yes      | —       | Personal access token                                        |
-| `owner`      | yes      | —       | Repository owner (user or organization)                      |
-| `repo`       | yes      | —       | Repository name                                              |
-| `head`       | yes      | —       | Source branch (or `user:branch` for cross-repo PRs)          |
-| `base`       | yes      | —       | Target branch                                                |
-| `title`      | yes      | —       | Pull request title                                           |
-| `body`       | no       | `''`    | Pull request description                                     |
-| `assignees`  | no       | `''`    | Comma-separated usernames to assign                          |
-| `labels`     | no       | `''`    | Comma-separated label IDs (integers)                         |
-| `milestone`  | no       | `''`    | Milestone ID (integer)                                       |
+| Name         | Required | Default                    | Description                                                                                            |
+| ------------ | -------- | -------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `token`      | yes      | —                          | Personal access token                                                                                  |
+| `owner`      | yes      | —                          | Repository owner (user or organization)                                                                |
+| `repo`       | yes      | —                          | Repository name                                                                                        |
+| `head`       | yes      | —                          | Source branch (or `user:branch` for cross-repo PRs)                                                    |
+| `base`       | yes      | —                          | Target branch                                                                                          |
+| `title`      | yes      | —                          | Pull request title                                                                                     |
+| `body`       | no       | `''`                       | Pull request description                                                                               |
+| `assignees`  | no       | `''`                       | Comma-separated usernames to assign                                                                    |
+| `labels`     | no       | `''`                       | Comma-separated label IDs (integers)                                                                   |
+| `milestone`  | no       | `''`                       | Milestone ID (integer)                                                                                 |
+| `server_url` | no       | `<URL of workflow origin>` | Base URL of the Copia instance. Defaults to the URL of the server where the workflow was started from. |
 
 ## Outputs
 

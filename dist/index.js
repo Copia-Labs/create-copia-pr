@@ -25686,10 +25686,11 @@ const core = __importStar(__nccwpck_require__(7484));
 const http_client_1 = __nccwpck_require__(4844);
 async function run() {
     try {
-        // Read required inputs
-        const serverUrl = core
-            .getInput('server_url', { required: true })
-            .replace(/\/+$/, '');
+        // Read server URL: use input if provided, otherwise fall back to GITHUB_SERVER_URL
+        const serverUrl = (core.getInput('server_url') || process.env.GITHUB_SERVER_URL || '').replace(/\/+$/, '');
+        if (!serverUrl) {
+            throw new Error('server_url input or GITHUB_SERVER_URL environment variable must be set');
+        }
         const token = core.getInput('token', { required: true });
         const owner = core.getInput('owner', { required: true });
         const repo = core.getInput('repo', { required: true });
