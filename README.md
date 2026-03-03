@@ -9,7 +9,7 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 ### Minimal Example
 
 ```yaml
-- uses: copia-automation/create-copia-pr@v1
+- uses: Copia-Labs/create-copia-pr@v1
   with:
     server_url: https://app.copia.io
     token: ${{ secrets.COPIA_TOKEN }}
@@ -23,7 +23,7 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 ### Full Example
 
 ```yaml
-- uses: copia-automation/create-copia-pr@v1
+- uses: Copia-Labs/create-copia-pr@v1
   id: create-pr
   with:
     server_url: https://app.copia.io
