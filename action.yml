@@ -4,8 +4,7 @@ author: 'Copia Automation'
 
 inputs:
   token:
-    description: 'Personal access token for authentication'
-    required: true
+    default: ${{ github.token }}
   owner:
     description: 'Repository owner (user or organization)'
     required: true

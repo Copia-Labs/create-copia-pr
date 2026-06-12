@@ -9,9 +9,8 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 ### Minimal Example
 
 ```yaml
-- uses: Copia-Labs/create-copia-pr@v1
+- uses: Copia-Labs/create-copia-pr@v1.1.0
   with:
-    token: ${{ secrets.COPIA_TOKEN }}
     owner: my-org
     repo: my-project
     head: feature-branch
@@ -22,11 +21,10 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 ### Full Example
 
 ```yaml
-- uses: Copia-Labs/create-copia-pr@v1
+- uses: Copia-Labs/create-copia-pr@v1.1.0
   id: create-pr
   with:
     server_url: https://app.copia.io # optional override
-    token: ${{ secrets.COPIA_TOKEN }}
     owner: my-org
     repo: my-project
     head: feature-branch
@@ -49,7 +47,6 @@ Works on both Copia-hosted and self-hosted runners — only requires the Node.js
 
 | Name         | Required | Default                    | Description                                                                                            |
 | ------------ | -------- | -------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `token`      | yes      | —                          | Personal access token                                                                                  |
 | `owner`      | yes      | —                          | Repository owner (user or organization)                                                                |
 | `repo`       | yes      | —                          | Repository name                                                                                        |
 | `head`       | yes      | —                          | Source branch (or `user:branch` for cross-repo PRs)                                                    |
